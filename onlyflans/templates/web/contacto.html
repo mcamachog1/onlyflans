@@ -3,9 +3,15 @@
 
 {% block body %}
 
-<h1>Cuerpo de la página CONTACTO</h1>
+<h1>Contacto</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.customer_email}}
+    {{form.customer_name}}
+    {{form.message}}
+    <button type="submit">Enviar</button>
+</form>
 
     
-{% include "web/includes/footer.html" %}
 
 {% endblock body%}
